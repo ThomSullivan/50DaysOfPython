@@ -17,19 +17,21 @@ students = ['Male', 'Female', 'female', 'male', 'male', 'male', 'female', 'male'
 # return:
 # [(‘Male’,7), (‘female’,6)]
 
-def my_discount():
-    price = input('Enter a price:$ ')
-    discount = input('Enter a discount rate: ')
-    discount = int(discount)
-    price = int(price)
+def my_discount(num1, num2):
+    discount = int(num2)
+    price = int(num1)
     if 100 - discount >= 0 and 100 - discount <= 100:
         discount = 0.01 * (100 - discount)
         total = price * discount
-        return print('$' + str(total) +' is your discounted total')
+        print('$' + str(total) +' is your discounted total')
+        return total
     else:
         return(print('Error: Invalid discount amount'))
+    #This code commented out for testing
+#price = input('Enter a price:$ ')
+#discount = input('Enter a discount rate: ')
+#my_discount(price, discount)
 
-my_discount()
 
 def gender_count(list):
     male = 0
@@ -44,3 +46,4 @@ def gender_count(list):
     return [('Male',male),('female',female)]
 
 print(gender_count(students))
+

@@ -82,3 +82,14 @@ def test_odd_even():
 
 def test_prime_numbers():
     assert prime_numbers(10) == [2,3,5,7]
+
+#Day 9 tests
+from day9 import biggest_odd, zeros_last
+
+def test_biggest_odd():
+    assert biggest_odd('23569') == 9
+
+def test_zeros_last():
+    input = [2,1,4,7,6]
+    input2 = [1,4,6,0,7,0,9]
+    assert zeros_last(input) == [1, 2, 4, 6, 7] and zeros_last(input2) == [1, 4, 6, 7, 9, 0, 0]

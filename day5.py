@@ -27,11 +27,6 @@ def my_discount(num1, num2):
         return total
     else:
         return(print('Error: Invalid discount amount'))
-    #This code commented out for testing
-#price = input('Enter a price:$ ')
-#discount = input('Enter a discount rate: ')
-#my_discount(price, discount)
-
 
 def gender_count(list):
     male = 0
@@ -45,5 +40,9 @@ def gender_count(list):
             pass
     return [('Male',male),('female',female)]
 
-print(gender_count(students))
+if __name__ == "__main__":
+    price = input('Enter a price:$ ')
+    discount = input('Enter a discount rate: ')
+    my_discount(price, discount)
+    print(gender_count(students))
 

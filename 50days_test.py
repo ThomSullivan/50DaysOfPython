@@ -93,3 +93,13 @@ def test_zeros_last():
     input = [2,1,4,7,6]
     input2 = [1,4,6,0,7,0,9]
     assert zeros_last(input) == [1, 2, 4, 6, 7] and zeros_last(input2) == [1, 4, 6, 7, 9, 0, 0]
+    
+#Day 10 tests
+from day10 import hide_password, convert_numbers
+
+def test_hide_password():
+    assert hide_password('hello') == '***** user password is 5 characters long'
+
+def test_convert_numbers():
+    input = [1000000, 2356989, 2354672, 9878098]
+    assert convert_numbers(input) == [ '1,000,000', '2,356,989', '2,354,672', '9,878,098']

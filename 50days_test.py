@@ -103,3 +103,13 @@ def test_hide_password():
 def test_convert_numbers():
     input = [1000000, 2356989, 2354672, 9878098]
     assert convert_numbers(input) == [ '1,000,000', '2,356,989', '2,354,672', '9,878,098']
+
+#Day 11 test
+from day11 import equal_strings, swap_values
+
+def test_equal_strings():
+    assert equal_strings('love','evol') == True
+
+def test_swap_values():
+    list = [2,4,67,7]
+    assert swap_values(list) == [7,4,67,2]

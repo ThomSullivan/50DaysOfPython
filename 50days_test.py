@@ -113,3 +113,16 @@ def test_equal_strings():
 def test_swap_values():
     list = [2,4,67,7]
     assert swap_values(list) == [7,4,67,2]
+
+#Day 12 tests
+from day12 import count_dots, age_in_minutes
+from datetime import *
+
+def test_count_dots():
+    assert count_dots('h.e.l.p.') == 4 and count_dots('he.lp.') == 2
+
+def test_age_in_minutes():
+    today = date.today()
+    minutes = ((today.year - 1930) * 525600)
+    error = 'Invalid input'
+    assert age_in_minutes(1930) == minutes and age_in_minutes(1899) == error and age_in_minutes(22500) == error

@@ -126,3 +126,11 @@ def test_age_in_minutes():
     minutes = ((today.year - 1930) * 525600)
     error = 'Invalid input'
     assert age_in_minutes(1930) == minutes and age_in_minutes(1899) == error and age_in_minutes(22500) == error
+
+#Day 13 tests
+from day13 import your_vat
+
+def test_your_vat():
+    assert your_vat(220, 15) == 253
+    
+# I am unsure how to write a test for python_snakes()

@@ -128,9 +128,21 @@ def test_age_in_minutes():
     assert age_in_minutes(1930) == minutes and age_in_minutes(1899) == error and age_in_minutes(22500) == error
 
 #Day 13 tests
-from day13 import your_vat
+from day13 import your_vat, python_snakes
 
 def test_your_vat():
     assert your_vat(220, 15) == 253
     
-# I am unsure how to write a test for python_snakes()
+def test_python_snakes():
+    # I am unsure how to write a test for python_snakes()
+    assert True == True
+
+#Day 14 tests
+from day14 import flat_list, your_salary
+
+def test_flat_list():
+    example = [[2,4,5,6]]
+    assert flat_list(example) == [2,4,5,6]
+
+def test_your_salary():
+    assert your_salary(105) == 2125

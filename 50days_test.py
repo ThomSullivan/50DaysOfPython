@@ -146,3 +146,12 @@ def test_flat_list():
 
 def test_your_salary():
     assert your_salary(105) == 2125
+
+#Day 15 tests
+from day15 import same_in_reverse, your_age
+
+def test_same_in_reverse():
+    assert same_in_reverse('dad') == True and same_in_reverse('dads') == False
+
+def test_your_age():
+    assert your_age('jane') == 'Hi, jane, you are 23 years old'

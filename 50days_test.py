@@ -155,3 +155,14 @@ def test_same_in_reverse():
 
 def test_your_age():
     assert your_age('jane') == 'Hi, jane, you are 23 years old'
+
+#Day 16 test
+from day16 import sum_list, unpack_nest
+
+def test_sum_list():
+    list = [[2, 4, 5, 6], [2, 3, 5, 6]]
+    assert sum_list(list) == 33
+
+def test_unpack_nest():
+    nested_list = [[12, 34, 56, 67], [34, 68, 78]]
+    assert unpack_nest(nested_list) == [34, 67, 78]

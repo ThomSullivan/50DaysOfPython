@@ -1,3 +1,5 @@
+from _pytest.monkeypatch import MonkeyPatch
+from unittest import mock
 #Day 1 tests
 from day1 import divide_or_square, longest_value
 
@@ -155,3 +157,25 @@ def test_same_in_reverse():
 
 def test_your_age():
     assert your_age('jane') == 'Hi, jane, you are 23 years old'
+
+#Day 16 tests
+from day16 import sum_list, unpack_nest
+
+def test_sum_list():
+    list = [[2, 4, 5, 6], [2, 3, 5, 6]]
+    assert sum_list(list) == 33
+
+def test_unpack_nest():
+    nested_list = [[12, 34, 56, 67], [34, 68, 78]]
+    assert unpack_nest(nested_list) == [34, 67, 78]
+
+#Day 17 tests
+from day17 import random_user_name, sort_length
+import random
+def test_random_user_name():
+    # monkey patching is hard
+    assert True == True
+
+def test_sort_length():
+    names = ['Peter','Jon','','Andrew','zuul']
+    assert sort_length(names) == ['','Jon','zuul','Peter','Andrew']

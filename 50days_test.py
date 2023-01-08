@@ -1,5 +1,5 @@
-from _pytest.monkeypatch import MonkeyPatch
-from unittest import mock
+import re
+
 #Day 1 tests
 from day1 import divide_or_square, longest_value
 
@@ -171,11 +171,26 @@ def test_unpack_nest():
 
 #Day 17 tests
 from day17 import random_user_name, sort_length
-import random
+
 def test_random_user_name():
-    # monkey patching is hard
-    assert True == True
+    s= random_user_name('Starla')
+    match = re.search(r'[\w]+[0-9]', s)
+    if match:
+        assert True == True
+    else:
+        assert False == True
 
 def test_sort_length():
     names = ['Peter','Jon','','Andrew','zuul']
     assert sort_length(names) == ['','Jon','zuul','Peter','Andrew']
+
+#Day 18 tests
+from day18 import any_number, add_reverse
+
+def test_any_number():
+    assert any_number(12, 90, 12, 34) == 37 and any_number(12, 90) == 51
+
+def test_add_reverse():
+    list1, list2, list3 = [10, 12, 34], [12, 56, 78], [12, 56]
+    error_message = 'the lists are not of equal lengths'
+    assert add_reverse(list1, list2) == [112, 68, 22] and add_reverse(list1, list3) == error_message

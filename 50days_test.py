@@ -174,7 +174,7 @@ from day17 import random_user_name, sort_length
 
 def test_random_user_name():
     s= random_user_name('Starla')
-    match = re.search(r'[\w]+[0-9]', s)
+    match = re.search(r'alrats+[0-9]', s)
     if match:
         assert True == True
     else:
@@ -194,3 +194,14 @@ def test_add_reverse():
     list1, list2, list3 = [10, 12, 34], [12, 56, 78], [12, 56]
     error_message = 'the lists are not of equal lengths'
     assert add_reverse(list1, list2) == [112, 68, 22] and add_reverse(list1, list3) == error_message
+
+#Day 19 tests
+from day19 import count_words, count_elements
+
+def test_count_words():
+    str = 'I love learning'
+    assert count_words(str) == 3
+
+def test_count_elements():
+    str = 'I love learning'
+    assert count_elements(str) == 13

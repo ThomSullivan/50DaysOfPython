@@ -205,3 +205,14 @@ def test_count_words():
 def test_count_elements():
     str = 'I love learning'
     assert count_elements(str) == 13
+
+#Day 20 tests
+from day20 import capitalizer, reversed_list
+
+def test_capitalizer():
+    assert capitalizer('i like learning') == 'I Like Learning'
+
+def test_reversed_list():
+    str1 = 'leArning is hard, bUt if You appLy youRself you can achieVe success'
+    result = ['gninrAel', 'tUb', 'uoY', 'yLppa', 'flesRuoy', 'eVeihca']
+    assert reversed_list(str1) == result

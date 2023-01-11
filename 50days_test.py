@@ -216,3 +216,14 @@ def test_reversed_list():
     str1 = 'leArning is hard, bUt if You appLy youRself you can achieVe success'
     result = ['gninrAel', 'tUb', 'uoY', 'yLppa', 'flesRuoy', 'eVeihca']
     assert reversed_list(str1) == result
+
+#Day 21 tests
+from day21 import make_tuples, even_or_average
+
+def test_make_tuples():
+    a, b = [1,2,3,4], [5,6,7,8]
+    assert make_tuples(a,b) == [(1, 5), (2, 6), (3, 7), (4, 8)]
+
+def test_even_or_average():
+    a, b = [1,2,3,4,5], [1,3,5,7,9]
+    assert even_or_average(a) == 4 and even_or_average(b) == 5

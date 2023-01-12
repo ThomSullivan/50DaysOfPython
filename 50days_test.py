@@ -227,3 +227,15 @@ def test_make_tuples():
 def test_even_or_average():
     a, b = [1,2,3,4,5], [1,3,5,7,9]
     assert even_or_average(a) == 4 and even_or_average(b) == 5
+
+#Day 22 test
+from day22 import add_hash, add_underscore, remove_underscore
+
+def test_add_hash():
+    assert add_hash('python is cool') == 'python#is#cool'
+
+def test_add_underscore():
+    assert add_underscore('python#is#cool') == 'python_is_cool'
+
+def test_remove_underscore():
+    assert remove_underscore('python_is_cool') == 'python is cool'

@@ -239,3 +239,14 @@ def test_add_underscore():
 
 def test_remove_underscore():
     assert remove_underscore('python_is_cool') == 'python is cool'
+
+#Day 23 tests
+from day23 import calculate, multiply_words
+
+def test_calculate():
+    assert calculate('*',2,21) == 42
+
+def test_multiply_words():
+    s1 = "love live and laugh"
+    s2 = "Hate war love Peace"
+    assert multiply_words(s1) == 240 and multiply_words(s2) == 12

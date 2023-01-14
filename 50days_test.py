@@ -250,3 +250,15 @@ def test_multiply_words():
     s1 = "love live and laugh"
     s2 = "Hate war love Peace"
     assert multiply_words(s1) == 240 and multiply_words(s2) == 12
+
+#Day 24 tests
+from day24 import average_calories, nested_lists
+
+def test_average_calories():
+    assert average_calories(3500, 2) == 1750.0
+
+
+def test_nested_lists():
+    a, b, c = [1, 2, 3, 5], [1, 2, 3, 4], [1, 3, 4, 5]
+    d = [[1, 2, 3, 5], [1, 2, 3, 4], [1, 3, 4, 5]]
+    assert nested_lists(a,b,c) == d

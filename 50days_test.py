@@ -262,3 +262,13 @@ def test_nested_lists():
     a, b, c = [1, 2, 3, 5], [1, 2, 3, 4], [1, 3, 4, 5]
     d = [[1, 2, 3, 5], [1, 2, 3, 4], [1, 3, 4, 5]]
     assert nested_lists(a,b,c) == d
+
+#Day 25 tests
+from day25 import all_the_same, read_backwards
+def test_all_the_same():
+    a, b = ['Mary','Mary','Mary'], ['Mork','Mindy','Oork']
+    assert all_the_same(a) == True and all_the_same(b) == False
+
+def test_read_backwards():
+    str1 = "the love is real"
+    assert read_backwards(str1) == 'real is love the'

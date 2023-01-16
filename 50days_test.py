@@ -272,3 +272,15 @@ def test_all_the_same():
 def test_read_backwards():
     str1 = "the love is real"
     assert read_backwards(str1) == 'real is love the'
+
+#Day 26 tests
+from day26 import sort_words, string_length
+
+def test_sort_words():
+    result = ['e,f,i,l,o,v']
+    assert sort_words('love life') == result
+
+def test_string_length():
+    result = {'Hi': 2, 'my': 2, 'name': 4, 'is': 2, 'Richard': 7}
+    s = 'Hi my name is Richard'
+    assert string_length(s) == result

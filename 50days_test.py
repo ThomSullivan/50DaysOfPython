@@ -284,3 +284,17 @@ def test_string_length():
     result = {'Hi': 2, 'my': 2, 'name': 4, 'is': 2, 'Richard': 7}
     s = 'Hi my name is Richard'
     assert string_length(s) == result
+
+#Day 27 tests
+from day27 import unique_numbers, difference
+
+def test_unique_numbers():
+    list = [1, 2, 4, 5, 6, 7, 8, 8]
+    list2 = [1, 2, 4, 5, 6, 7, 7, 8, 8]
+    result = [1, 2, 4, 5, 6, 7, 8]
+    assert unique_numbers(list) == list and unique_numbers(list2) == result
+
+def test_difference():
+    list1 = [1, 2, 4, 5, 6]
+    list2 = [1, 2, 5, 7, 9]
+    assert difference(list1, list2) == [4, 6, 7, 9]

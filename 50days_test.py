@@ -298,3 +298,13 @@ def test_difference():
     list1 = [1, 2, 4, 5, 6]
     list2 = [1, 2, 5, 7, 9]
     assert difference(list1, list2) == [4, 6, 7, 9]
+
+#Day 28 tests
+from day28 import index_position, largest_number
+
+def test_index_position():
+    assert index_position('LovE') == [1,2]
+
+def test_largest_number():
+    list, result = [3, 67, 87, 9, 2], '9,877,632'
+    assert largest_number(list) == result

@@ -308,3 +308,11 @@ def test_index_position():
 def test_largest_number():
     list, result = [3, 67, 87, 9, 2], '9,877,632'
     assert largest_number(list) == result
+
+#Day 29 tests
+
+from day29 import middle_figure
+
+def test_middle_figure():
+    str1, str2, error = 'make love', 'not wars', 'no middle figure'
+    assert middle_figure(str1, str2) == 'e' and middle_figure('','') == error

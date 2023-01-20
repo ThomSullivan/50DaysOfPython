@@ -316,3 +316,15 @@ from day29 import middle_figure
 def test_middle_figure():
     str1, str2, error = 'make love', 'not wars', 'no middle figure'
     assert middle_figure(str1, str2) == 'e' and middle_figure('','') == error
+
+#Day 30 tests
+from day30 import repeated_name, sorted_names
+
+def test_repeated_name():
+    names = ["John", "Peter", "John", "Peter", "Jones", "Peter"]
+    assert repeated_name(names) == 'Peter'
+
+def test_sorted_names():
+    names =  ['Beyonce Knowles', 'Alicia Keys', 'Katie Perry', 'Chris Brown',' Tom Cruise']
+    result = ['Brown Chris', 'Cruise Tom', 'Keys Alicia', 'Knowles Beyonce', 'Perry Katie']
+    assert sorted_names(names) == result

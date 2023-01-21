@@ -328,3 +328,11 @@ def test_sorted_names():
     names =  ['Beyonce Knowles', 'Alicia Keys', 'Katie Perry', 'Chris Brown',' Tom Cruise']
     result = ['Brown Chris', 'Cruise Tom', 'Keys Alicia', 'Knowles Beyonce', 'Perry Katie']
     assert sorted_names(names) == result
+
+#Day 31 tests
+from day31 import longest_word
+
+def test_longest_word():
+    list = ['Java', 'JavaScript', 'Python']
+    result = [10,'JavaScript']
+    assert longest_word(list) == result

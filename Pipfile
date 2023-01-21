@@ -14,6 +14,7 @@ pluggy = "*"
 pytest = "*"
 six = "*"
 tomli = "*"
+pyinputplus = "*"
 
 [dev-packages]
 

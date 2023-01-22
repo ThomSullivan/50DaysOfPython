@@ -336,3 +336,16 @@ def test_longest_word():
     list = ['Java', 'JavaScript', 'Python']
     result = [10,'JavaScript']
     assert longest_word(list) == result
+
+#Day 32 test
+from day32 import password_validator, email_validator
+
+def test_password_validator():
+    validPassword = password_validator('Aa12bb34')
+    invalidPassword = password_validator('short')
+    assert validPassword == True and invalidPassword == False
+
+def test_email_validator():
+    emails = ['ben@mail.com', 'john@mail.cm', 'kenny@gmail.com', '@list.com' ]
+    result = ['ben@mail.com','kenny@gmail.com']
+    assert email_validator(emails) == result

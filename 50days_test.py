@@ -349,3 +349,11 @@ def test_email_validator():
     emails = ['ben@mail.com', 'john@mail.cm', 'kenny@gmail.com', '@list.com' ]
     result = ['ben@mail.com','kenny@gmail.com']
     assert email_validator(emails) == result
+
+#Day 33 tests
+from day33 import inter_section
+
+def test_inter_sections():
+    list1 = [20, 30, 60, 65, 75, 80, 85]
+    list2 = [ 42, 30, 80, 65, 68, 88, 95]
+    assert inter_section(list1, list2) == (30, 65, 80)

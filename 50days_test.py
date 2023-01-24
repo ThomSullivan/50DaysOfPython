@@ -357,3 +357,10 @@ def test_inter_sections():
     list1 = [20, 30, 60, 65, 75, 80, 85]
     list2 = [ 42, 30, 80, 65, 68, 88, 95]
     assert inter_section(list1, list2) == (30, 65, 80)
+
+#Day 34 tests
+from day34 import just_digits
+
+def test_just_digits():
+    dataFile = 'day34Data.csv'
+    assert just_digits(dataFile) == [1991, 2, 2000, 3, 2008]

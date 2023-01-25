@@ -364,3 +364,17 @@ from day34 import just_digits
 def test_just_digits():
     dataFile = 'day34Data.csv'
     assert just_digits(dataFile) == [1991, 2, 2000, 3, 2008]
+
+#Day 35 test
+from day35 import check_pangram, find_index
+
+def test_check_pangram():
+    pangram = 'the quick brown fox jumps over a lazy dog'
+    nonpangram = 'Hello there!'
+    assert check_pangram(pangram) == True and check_pangram(nonpangram) == False
+
+def test_find_index():
+    list = [1, 2, 4, 6, 7, 7] 
+    found = [4, 5]
+    notFound = [8, 8, 8, 8, 8, 8]
+    assert find_index(list, 7) == found and find_index(list, 8) == notFound

@@ -378,3 +378,10 @@ def test_find_index():
     found = [4, 5]
     notFound = [8, 8, 8, 8, 8, 8]
     assert find_index(list, 7) == found and find_index(list, 8) == notFound
+
+#Day 36 test
+from day36 import count
+
+def test_count():
+    result = {'h':1, 'e':1, 'l':2, 'o':1}
+    assert count('hello') == result

@@ -385,3 +385,9 @@ from day36 import count
 def test_count():
     result = {'h':1, 'e':1, 'l':2, 'o':1}
     assert count('hello') == result
+
+#Day 37 tests
+from day37 import count_the_vowels
+
+def test_count_the_vowels():
+    assert count_the_vowels('hello') == 2 and count_the_vowels('saas') == 1

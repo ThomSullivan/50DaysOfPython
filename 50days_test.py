@@ -391,3 +391,11 @@ from day37 import count_the_vowels
 
 def test_count_the_vowels():
     assert count_the_vowels('hello') == 2 and count_the_vowels('saas') == 1
+
+#Day 38 tests
+from day38 import missing_number
+
+def test_missing_number():
+    list = [1, 2, 3, 5, 6, 7, 9, 11, 12, 23, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 31]
+    result = [4, 8, 10, 13, 16, 29, 30]
+    assert missing_number(list) == result

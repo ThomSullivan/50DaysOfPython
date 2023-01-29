@@ -399,3 +399,25 @@ def test_missing_number():
     list = [1, 2, 3, 5, 6, 7, 9, 11, 12, 23, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 31]
     result = [4, 8, 10, 13, 16, 29, 30]
     assert missing_number(list) == result
+
+#Day 39 test
+from day39 import generate_password
+
+def test_generate_password():
+    strengths = ['weak', 'strong', 'very strong']
+    for strength in strengths:
+        match strength:
+            case 'weak':
+                length = 5
+            case 'strong':
+                length = 8
+            case 'very strong':
+                length = 12
+            
+        password = generate_password(strength) 
+        x = bool(re.search('(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\\W)', password))
+        if x == False:
+            raise ValueError
+        if len(password) != length:
+            raise AttributeError
+    assert True == True       

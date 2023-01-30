@@ -421,3 +421,11 @@ def test_generate_password():
         if len(password) != length:
             raise AttributeError
     assert True == True       
+
+#Day 40 test
+from day40 import translate
+
+def test_translate():
+    string = 'i love python'
+    result = 'iyay ovelay ythonpay'
+    assert translate(string) == result

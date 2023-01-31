@@ -429,3 +429,16 @@ def test_translate():
     string = 'i love python'
     result = 'iyay ovelay ythonpay'
     assert translate(string) == result
+
+#Day 41 tests
+from day41 import words_with_vowels, Bmw
+
+def test_words_with_vowels():
+    input = 'You have no rhythm'
+    bad_input = 'sdfghj rtnfgsd jkldbvnc'
+    result = ['You', 'have', 'no']
+    assert words_with_vowels(input) == result and words_with_vowels(bad_input) == []
+
+def test_print_car():
+    result = 'Car model = x6\nColor = silver\nYear = 2018\nTransmission = Auto\nElectric = False'
+    assert Bmw.print_car() == result

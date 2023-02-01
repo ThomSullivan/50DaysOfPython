@@ -442,3 +442,13 @@ def test_words_with_vowels():
 def test_print_car():
     result = 'Car model = x6\nColor = silver\nYear = 2018\nTransmission = Auto\nElectric = False'
     assert Bmw.print_car() == result
+
+#Day 42 tests
+import pyinputplus
+from day42 import spelling_check
+
+def test_spelling_check(monkeypatch):
+    monkeypatch.setattr(pyinputplus, 'inputStr', lambda _, **kwargs:'mooose')
+    monkeypatch.setattr(pyinputplus, 'inputMenu', lambda _, **kwargs:'Yes')
+    x = spelling_check()
+    assert x == 'The correct spelling is "morose"'

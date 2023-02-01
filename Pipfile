@@ -15,6 +15,7 @@ pytest = "*"
 six = "*"
 tomli = "*"
 pyinputplus = "*"
+textblob = "*"
 
 [dev-packages]
 

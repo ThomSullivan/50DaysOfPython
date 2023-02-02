@@ -452,3 +452,31 @@ def test_spelling_check(monkeypatch):
     monkeypatch.setattr(pyinputplus, 'inputMenu', lambda _, **kwargs:'Yes')
     x = spelling_check()
     assert x == 'The correct spelling is "morose"'
+
+#Day 43 tests
+from day43 import student_marks
+
+def make_mock_input(generator):
+    def mock_input(*args, **kwargs): # ignore any arguments
+        return next(generator) # the state of the generator is stored in the enclosing scope of make_mock_input
+
+    return mock_input
+
+def test_student_marks(monkeypatch):
+    def input_generator(names):
+        yield from names
+
+    def grade_generator(grades):
+        yield from grades
+
+    names = ('Thom', 'Zuul',  'Zaphod', 'Rand', 'Stilgar','')
+    grades = (100, 45, 73, 100, 67)
+    name_gen = input_generator(names)
+    grade_gen = grade_generator(grades)
+    mock_names = make_mock_input(name_gen)
+    mock_grades = make_mock_input(grade_gen)
+    monkeypatch.setattr(pyinputplus, 'inputStr', mock_names)
+    monkeypatch.setattr(pyinputplus, 'inputInt', mock_grades)
+
+    x = student_marks()
+    assert x == {names[i] : grades[i] for i in range(len(names)-1) }

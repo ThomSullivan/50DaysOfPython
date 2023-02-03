@@ -26,4 +26,4 @@ def just_digits(csvFile):
                 pass
         return numberList
 
-print(just_digits('day34Data.csv'))
+print(just_digits('Days/csvFiles/day34Data.csv'))

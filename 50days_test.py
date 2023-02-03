@@ -1,7 +1,14 @@
 import re
 
+## For use with multiple input monkey patching##
+def make_mock_input(generator):
+    def mock_input(*args, **kwargs): # ignore any arguments
+        return next(generator) # the state of the generator is stored in the enclosing scope of make_mock_input
+    return mock_input
+
+
 #Day 1 tests
-from day1 import divide_or_square, longest_value
+from Days.day1 import divide_or_square, longest_value
 
 def test_divide_or_square():
     assert divide_or_square(10) == 3.16
@@ -11,7 +18,7 @@ def test_longest_value():
     assert longest_value(fruits) == 'apple'
 
 #Day 2 tests
-from day2 import convert_add, check_duplicates
+from Days.day2 import convert_add, check_duplicates
 
 def test_convert_add():
     example =  ['1', '3', '5']
@@ -23,7 +30,7 @@ def test_check_duplicates():
     assert check_duplicates(fruits) == {'apple'} and check_duplicates(names) == 'No duplicates'
 
 #Day 3 tests
-from day3 import register_check, lowercase_check
+from Days.day3 import register_check, lowercase_check
 
 def test_register_check():
     register = {'Michael':'yes','John': 'no', 'Peter':'yes', 'Mary': 'yes'}
@@ -34,7 +41,7 @@ def test_lowercase_check():
     assert lowercase_check(names) == ('zuul','kerry', 'dickson', 'carol', 'adam')
 
 #Day 4 tests
-from day4 import only_floats, word_index
+from Days.day4 import only_floats, word_index
 
 def test_only_floats():
     assert only_floats(12.1, 23) == 1
@@ -45,7 +52,7 @@ def test_word_index():
     assert word_index(words1) == 2 and word_index(words2) == 0
 
 #Day 5 tests
-from day5 import my_discount, gender_count
+from Days.day5 import my_discount, gender_count
 
 def test_my_discount():
     assert my_discount(150, 15) == 127.5
@@ -55,7 +62,7 @@ def test_gender_count():
     assert gender_count(students) == [('Male',7), ('female',6)]
 
 #Day 6 tests
-from day6 import user_name, zeroed
+from Days.day6 import user_name, zeroed
 
 def test_user_name():
     user = 'ben@gmail.com'
@@ -66,7 +73,7 @@ def test_zeroed():
     assert zeroed(input) == [0, 5, 7, 8, 0]
 
 #Day 7 tests
-from day7 import string_range, find_s
+from Days.day7 import string_range, find_s
 
 def test_string_range():
     assert string_range(6) == '0.1.2.3.4.5'
@@ -76,7 +83,7 @@ def test_find_s():
     assert find_s(names) == {'Sasha': 1, 'Sera': 2}
 
 #Day 8 tests
-from day8 import odd_even, prime_numbers
+from Days.day8 import odd_even, prime_numbers
 
 def test_odd_even():
     list = [1,2,4,6]
@@ -86,7 +93,7 @@ def test_prime_numbers():
     assert prime_numbers(10) == [2,3,5,7]
 
 #Day 9 tests
-from day9 import biggest_odd, zeros_last
+from Days.day9 import biggest_odd, zeros_last
 
 def test_biggest_odd():
     assert biggest_odd('23569') == 9
@@ -97,7 +104,7 @@ def test_zeros_last():
     assert zeros_last(input) == [1, 2, 4, 6, 7] and zeros_last(input2) == [1, 4, 6, 7, 9, 0, 0]
     
 #Day 10 tests
-from day10 import hide_password, convert_numbers
+from Days.day10 import hide_password, convert_numbers
 
 def test_hide_password():
     assert hide_password('hello') == '***** user password is 5 characters long'
@@ -107,7 +114,7 @@ def test_convert_numbers():
     assert convert_numbers(input) == [ '1,000,000', '2,356,989', '2,354,672', '9,878,098']
 
 #Day 11 test
-from day11 import equal_strings, swap_values
+from Days.day11 import equal_strings, swap_values
 
 def test_equal_strings():
     assert equal_strings('love','evol') == True
@@ -117,7 +124,7 @@ def test_swap_values():
     assert swap_values(list) == [7,4,67,2]
 
 #Day 12 tests
-from day12 import count_dots, age_in_minutes
+from Days.day12 import count_dots, age_in_minutes
 from datetime import *
 
 def test_count_dots():
@@ -130,7 +137,7 @@ def test_age_in_minutes():
     assert age_in_minutes(1930) == minutes and age_in_minutes(1899) == error and age_in_minutes(22500) == error
 
 #Day 13 tests
-from day13 import your_vat, python_snakes
+from Days.day13 import your_vat, python_snakes
 
 def test_your_vat():
     assert your_vat(220, 15) == 253
@@ -140,7 +147,7 @@ def test_python_snakes():
     assert True == True
 
 #Day 14 tests
-from day14 import flat_list, your_salary
+from Days.day14 import flat_list, your_salary
 
 def test_flat_list():
     example = [[2,4,5,6]]
@@ -150,7 +157,7 @@ def test_your_salary():
     assert your_salary(105) == 2125
 
 #Day 15 tests
-from day15 import same_in_reverse, your_age
+from Days.day15 import same_in_reverse, your_age
 
 def test_same_in_reverse():
     assert same_in_reverse('dad') == True and same_in_reverse('dads') == False
@@ -159,7 +166,7 @@ def test_your_age():
     assert your_age('jane') == 'Hi, jane, you are 23 years old'
 
 #Day 16 tests
-from day16 import sum_list, unpack_nest
+from Days.day16 import sum_list, unpack_nest
 
 def test_sum_list():
     list = [[2, 4, 5, 6], [2, 3, 5, 6]]
@@ -170,7 +177,7 @@ def test_unpack_nest():
     assert unpack_nest(nested_list) == [34, 67, 78]
 
 #Day 17 tests
-from day17 import random_user_name, sort_length
+from Days.day17 import random_user_name, sort_length
 
 def test_random_user_name():
     s= random_user_name('Starla')
@@ -185,7 +192,7 @@ def test_sort_length():
     assert sort_length(names) == ['','Jon','zuul','Peter','Andrew']
 
 #Day 18 tests
-from day18 import any_number, add_reverse
+from Days.day18 import any_number, add_reverse
 
 def test_any_number():
     assert any_number(12, 90, 12, 34) == 37 and any_number(12, 90) == 51
@@ -196,7 +203,7 @@ def test_add_reverse():
     assert add_reverse(list1, list2) == [112, 68, 22] and add_reverse(list1, list3) == error_message
 
 #Day 19 tests
-from day19 import count_words, count_elements
+from Days.day19 import count_words, count_elements
 
 def test_count_words():
     str = 'I love learning'
@@ -207,7 +214,7 @@ def test_count_elements():
     assert count_elements(str) == 13
 
 #Day 20 tests
-from day20 import capitalizer, reversed_list
+from Days.day20 import capitalizer, reversed_list
 
 def test_capitalizer():
     assert capitalizer('i like learning') == 'I Like Learning'
@@ -218,7 +225,7 @@ def test_reversed_list():
     assert reversed_list(str1) == result
 
 #Day 21 tests
-from day21 import make_tuples, even_or_average
+from Days.day21 import make_tuples, even_or_average
 
 def test_make_tuples():
     a, b = [1,2,3,4], [5,6,7,8]
@@ -229,7 +236,7 @@ def test_even_or_average():
     assert even_or_average(a) == 4 and even_or_average(b) == 5
 
 #Day 22 test
-from day22 import add_hash, add_underscore, remove_underscore
+from Days.day22 import add_hash, add_underscore, remove_underscore
 
 def test_add_hash():
     assert add_hash('python is cool') == 'python#is#cool'
@@ -241,7 +248,7 @@ def test_remove_underscore():
     assert remove_underscore('python_is_cool') == 'python is cool'
 
 #Day 23 tests
-from day23 import calculate, multiply_words
+from Days.day23 import calculate, multiply_words
 
 def test_calculate():
     assert calculate('*',2,21) == 42
@@ -252,7 +259,7 @@ def test_multiply_words():
     assert multiply_words(s1) == 240 and multiply_words(s2) == 12
 
 #Day 24 tests
-from day24 import average_calories, nested_lists
+from Days.day24 import average_calories, nested_lists
 
 def test_average_calories():
     assert average_calories(3500, 2) == 1750.0
@@ -264,7 +271,7 @@ def test_nested_lists():
     assert nested_lists(a,b,c) == d
 
 #Day 25 tests
-from day25 import all_the_same, read_backwards
+from Days.day25 import all_the_same, read_backwards
 def test_all_the_same():
     a, b = ['Mary','Mary','Mary'], ['Mork','Mindy','Oork']
     assert all_the_same(a) == True and all_the_same(b) == False
@@ -274,7 +281,7 @@ def test_read_backwards():
     assert read_backwards(str1) == 'real is love the'
 
 #Day 26 tests
-from day26 import sort_words, string_length
+from Days.day26 import sort_words, string_length
 
 def test_sort_words():
     result = ['e,f,i,l,o,v']
@@ -286,7 +293,7 @@ def test_string_length():
     assert string_length(s) == result
 
 #Day 27 tests
-from day27 import unique_numbers, difference
+from Days.day27 import unique_numbers, difference
 
 def test_unique_numbers():
     list = [1, 2, 4, 5, 6, 7, 8, 8]
@@ -300,7 +307,7 @@ def test_difference():
     assert difference(list1, list2) == [4, 6, 7, 9]
 
 #Day 28 tests
-from day28 import index_position, largest_number
+from Days.day28 import index_position, largest_number
 
 def test_index_position():
     assert index_position('LovE') == [1,2]
@@ -311,14 +318,14 @@ def test_largest_number():
 
 #Day 29 tests
 
-from day29 import middle_figure
+from Days.day29 import middle_figure
 
 def test_middle_figure():
     str1, str2, error = 'make love', 'not wars', 'no middle figure'
     assert middle_figure(str1, str2) == 'e' and middle_figure('','') == error
 
 #Day 30 tests
-from day30 import repeated_name, sorted_names
+from Days.day30 import repeated_name, sorted_names
 
 def test_repeated_name():
     names = ["John", "Peter", "John", "Peter", "Jones", "Peter"]
@@ -330,7 +337,7 @@ def test_sorted_names():
     assert sorted_names(names) == result
 
 #Day 31 tests
-from day31 import longest_word
+from Days.day31 import longest_word
 
 def test_longest_word():
     list = ['Java', 'JavaScript', 'Python']
@@ -338,7 +345,7 @@ def test_longest_word():
     assert longest_word(list) == result
 
 #Day 32 test
-from day32 import password_validator, email_validator
+from Days.day32 import password_validator, email_validator
 
 def test_password_validator():
     validPassword = password_validator('Aa12bb34')
@@ -351,7 +358,7 @@ def test_email_validator():
     assert email_validator(emails) == result
 
 #Day 33 tests
-from day33 import inter_section
+from Days.day33 import inter_section
 
 def test_inter_sections():
     list1 = [20, 30, 60, 65, 75, 80, 85]
@@ -359,14 +366,14 @@ def test_inter_sections():
     assert inter_section(list1, list2) == (30, 65, 80)
 
 #Day 34 tests
-from day34 import just_digits
+from Days.day34 import just_digits
 
 def test_just_digits():
-    dataFile = 'day34Data.csv'
+    dataFile = 'Days/csvFiles/day34Data.csv'
     assert just_digits(dataFile) == [1991, 2, 2000, 3, 2008]
 
 #Day 35 test
-from day35 import check_pangram, find_index
+from Days.day35 import check_pangram, find_index
 
 def test_check_pangram():
     pangram = 'the quick brown fox jumps over a lazy dog'
@@ -380,20 +387,20 @@ def test_find_index():
     assert find_index(list, 7) == found and find_index(list, 8) == notFound
 
 #Day 36 test
-from day36 import count
+from Days.day36 import count
 
 def test_count():
     result = {'h':1, 'e':1, 'l':2, 'o':1}
     assert count('hello') == result
 
 #Day 37 tests
-from day37 import count_the_vowels
+from Days.day37 import count_the_vowels
 
 def test_count_the_vowels():
     assert count_the_vowels('hello') == 2 and count_the_vowels('saas') == 1
 
 #Day 38 tests
-from day38 import missing_number
+from Days.day38 import missing_number
 
 def test_missing_number():
     list = [1, 2, 3, 5, 6, 7, 9, 11, 12, 23, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 31]
@@ -401,7 +408,7 @@ def test_missing_number():
     assert missing_number(list) == result
 
 #Day 39 test
-from day39 import generate_password
+from Days.day39 import generate_password
 
 def test_generate_password():
     strengths = ['weak', 'strong', 'very strong']
@@ -423,7 +430,7 @@ def test_generate_password():
     assert True == True       
 
 #Day 40 test
-from day40 import translate
+from Days.day40 import translate
 
 def test_translate():
     string = 'i love python'
@@ -431,7 +438,7 @@ def test_translate():
     assert translate(string) == result
 
 #Day 41 tests
-from day41 import words_with_vowels, Bmw
+from Days.day41 import words_with_vowels, Bmw
 
 def test_words_with_vowels():
     input = 'You have no rhythm'
@@ -445,7 +452,7 @@ def test_print_car():
 
 #Day 42 tests
 import pyinputplus
-from day42 import spelling_check
+from Days.day42 import spelling_check
 
 def test_spelling_check(monkeypatch):
     monkeypatch.setattr(pyinputplus, 'inputStr', lambda _, **kwargs:'mooose')
@@ -454,13 +461,7 @@ def test_spelling_check(monkeypatch):
     assert x == 'The correct spelling is "morose"'
 
 #Day 43 tests
-from day43 import student_marks
-
-def make_mock_input(generator):
-    def mock_input(*args, **kwargs): # ignore any arguments
-        return next(generator) # the state of the generator is stored in the enclosing scope of make_mock_input
-
-    return mock_input
+from Days.day43 import student_marks
 
 def test_student_marks(monkeypatch):
     def input_generator(names):
@@ -480,3 +481,28 @@ def test_student_marks(monkeypatch):
 
     x = student_marks()
     assert x == {names[i] : grades[i] for i in range(len(names)-1) }
+
+#Day 44 test
+from Days.day44 import save_emails, open_emails
+
+def test_save_emails(monkeypatch):
+    def input_generator(emails):
+        yield from emails
+    emails = ('thom@thom.com','Zaphod@Heartofgold.com','Marvin@robot.com','')
+    emailGen = input_generator(emails)
+    mock_emails = make_mock_input(emailGen)
+    monkeypatch.setattr(pyinputplus,'inputEmail', mock_emails)
+    filePath = 'Days/csvFiles/day44Data.csv'
+    save_emails(filePath)
+    with open('Days/csvFiles/day44TestData.csv','r') as testData:
+        with open(filePath, 'r') as data:
+            assert testData.read() == data.read()
+
+def test_open_emails():
+    filePath = 'Days/csvFiles/day44TestData.csv'
+    returnedObject = open_emails(filePath)
+    with open(filePath, 'r') as testData:
+        assert returnedObject == testData.read()
+                
+
+

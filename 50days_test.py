@@ -504,5 +504,12 @@ def test_open_emails():
     with open(filePath, 'r') as testData:
         assert returnedObject == testData.read()
                 
+#Day 45 test
+from Days.day45 import analyse_string
+
+def test_analyse_string():
+    str = 'Python has a string format operator %. This functions analogously to printf format strings in C, e.g. "spam=%s eggs=%d" % ("blah", 2) evaluates to "spam=blah eggs=2". Source Wikipedia'
+    results = {'special characters': 22, 'words':18, 'total characters':156 }
+    assert analyse_string(str) == results
 
 

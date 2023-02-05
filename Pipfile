@@ -16,6 +16,9 @@ six = "*"
 tomli = "*"
 pyinputplus = "*"
 textblob = "*"
+pandas = "*"
+requests = "*"
+lxml = "*"
 
 [dev-packages]
 

@@ -512,4 +512,11 @@ def test_analyse_string():
     results = {'special characters': 22, 'words':18, 'total characters':156 }
     assert analyse_string(str) == results
 
+#Day 48 tests
+from Days.day48 import search_binary
+
+def test_search_binary():
+    list1 = [12, 34, 56, 78, 98, 22, 45, 13]
+    assert search_binary(list1, 22) == 2
+
 

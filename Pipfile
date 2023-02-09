@@ -19,6 +19,7 @@ textblob = "*"
 pandas = "*"
 requests = "*"
 lxml = "*"
+flask = "*"
 
 [dev-packages]
 
